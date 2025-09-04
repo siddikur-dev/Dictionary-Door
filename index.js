@@ -18,7 +18,7 @@ stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open w-4
 <path
 d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
 </svg>
-<span>Lesson
+<span>Lesson-
 ${lesson.level_no}
 
                                 </span>
