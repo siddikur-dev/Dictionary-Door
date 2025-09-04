@@ -84,7 +84,7 @@
 
                 <!-- Hamburger Menu -->
                 <div class="dropdown dropdown-end lg:hidden">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                    <label tabindex="0" class="btn btn-ghost">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -92,12 +92,50 @@
                         </svg>
                     </label>
                     <ul tabindex="0"
-                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
-                        <li><a>FAQ</a></li>
-                        <li><a>Learn</a></li>
-                        <li><a>Logout</a></li>
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-2">
+                        <li>
+                            <a
+                                class="btn btn-outline btn-primary btn-sm flex items-center gap-1 hover:bg-primary hover:text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-circle-question-mark w-4">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                    <path d="M12 17h.01" />
+                                </svg>
+                                FAQ
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="btn btn-outline btn-primary btn-sm flex items-center gap-1 hover:bg-primary hover:text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-book-open w-4">
+                                    <path d="M12 7v14" />
+                                    <path
+                                        d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" />
+                                </svg>
+                                Learn
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class="btn btn-outline btn-primary btn-sm flex items-center gap-1 hover:bg-primary hover:text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-log-out w-4">
+                                    <path d="m16 17 5-5-5-5" />
+                                    <path d="M21 12H9" />
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                </svg>
+                                Logout
+                            </a>
+                        </li>
                     </ul>
                 </div>
+
+
             </div>
         </div>
     </header>
