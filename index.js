@@ -76,7 +76,6 @@ const UiShowingWord = (words) => {
     return;
   }
   words.map((word) => {
-    console.log(word);
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
 <div class="card bg-white shadow-md rounded-xl p-6 text-center">
@@ -87,9 +86,9 @@ const UiShowingWord = (words) => {
     }/${word.pronunciation}</p>
 <div class="flex justify-between mt-6">
 <!-- Info Button -->
-<button onclick="document.getElementById('my_modal_${
+<button onclick="modalWordShow(${
       word.id
-    }').showModal()" class="btn btn-sm bg-blue-100 text-blue-600 border-none">
+    })"  class="btn btn-sm bg-blue-100 text-blue-600 border-none">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-info-icon lucide-badge-info"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>
 </button>
 
@@ -104,4 +103,78 @@ const UiShowingWord = (words) => {
   });
 };
 
+const modalWordShow = async (id) => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/word/${id}`
+  );
+  const data = await res.json();
+  showWordDetails(data.data);
+};
+const showWordDetails = (details) => {
+  console.log(details);
+  const my_modal = document.getElementById("modal-container");
+  const createDiv = document.createElement("div");
+  createDiv.innerHTML = `
+  
+    <form method="dialog">
+      <button
+        class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3"
+      >
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </form>
+
+    <!-- Title -->
+    <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">
+     ${details.word} <span class="text-gray-500 text-base sm:text-lg">${details.pronunciation}</span>
+    </h2>
+
+    <!-- Meaning -->
+    <div class="mb-4">
+      <h3 class="font-semibold text-gray-700">Meaning</h3>
+      <p class="text-gray-600 text-base sm:text-lg">${details.meaning}</p>
+    </div>
+
+    <!-- Example -->
+    <div class="mb-4">
+      <h3 class="font-semibold text-gray-700">Example</h3>
+      <p class="text-gray-600 text-base sm:text-lg">
+        ${details.sentence}
+      </p>
+    </div>
+
+    <!-- Synonyms -->
+    <div class="mb-4">
+      <h3 class="font-semibold text-gray-700 mb-2 bangla-font">সমার্থক শব্দ গুলো</h3>
+      <div class="flex flex-wrap gap-2">
+        <span
+          class="badge badge-outline px-3 py-2 text-sm sm:text-base"
+          >${details.synonyms}</span
+        >
+        <span
+          class="badge badge-outline px-3 py-2 text-sm sm:text-base"
+          >Excited</span
+        >
+        <span
+          class="badge badge-outline px-3 py-2 text-sm sm:text-base"
+          >Keen</span
+        >
+      </div>
+    </div>
+
+    <!-- Complete Button -->
+    <form method="dialog">
+      <button
+        class="btn w-full sm:w-auto bg-indigo-600 text-white hover:bg-indigo-700 mt-3"
+      >
+        Complete Learning
+      </button>
+    </form>
+  </div>
+  
+  `;
+  my_modal.append(createDiv);
+  console.log(details);
+  document.getElementById("my_modal").showModal();
+};
 loadLesson();
