@@ -10,7 +10,7 @@ const lessonVocabulary = (lessons) => {
     // create element
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
-    <button onClick="loadWard(${lesson.level_no})" class="btn btn-outline btn-primary btn-sm flex items-center gap-1 ">
+  <button id="lesson-btn-${lesson.level_no}"  onClick="loadWord(${lesson.level_no})" class=" lesson-btn btn btn-outline btn-primary btn-sm flex items-center gap-1 ">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
 stroke-linejoin="round" class="lucide lucide-book-open-icon lucide-book-open w-4">
@@ -28,11 +28,24 @@ ${lesson.level_no}
   });
 };
 
-const loadWard = (id) => {
+//remove active btn
+const removeBtn = () => {
+  const removeButton = document.querySelectorAll(".lesson-btn");
+  removeButton.forEach((btn) => btn.classList.remove("active"));
+};
+
+const loadWord = (id) => {
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => UiShowingWord(data.data));
+    .then((data) => {
+      removeBtn();
+      //get lesson-btn-
+      const getLessonBtn = document.getElementById(`lesson-btn-${id}`);
+      getLessonBtn.classList.add("active");
+
+      UiShowingWord(data.data);
+    });
 };
 
 const UiShowingWord = (words) => {
@@ -62,6 +75,7 @@ const UiShowingWord = (words) => {
     return;
   }
   words.map((word) => {
+    console.log(word);
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
 <div class="card bg-white shadow-md rounded-xl p-6 text-center">
@@ -72,7 +86,7 @@ const UiShowingWord = (words) => {
     }/${word.pronunciation}</p>
 <div class="flex justify-between mt-6">
 <!-- Info Button -->
-<button class="btn btn-sm bg-blue-100 text-blue-600 border-none">
+<button onclick="document.getElementById('my_modal_${word.id}').showModal()" class="btn btn-sm bg-blue-100 text-blue-600 border-none">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-info-icon lucide-badge-info"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><line x1="12" x2="12" y1="16" y2="12"/><line x1="12" x2="12.01" y1="8" y2="8"/></svg>
 </button>
 
@@ -86,4 +100,5 @@ const UiShowingWord = (words) => {
     levelWordDiv.append(createDiv);
   });
 };
+
 loadLesson();
