@@ -113,17 +113,9 @@ const modalWordShow = async (id) => {
 const showWordDetails = (details) => {
   console.log(details);
   const my_modal = document.getElementById("modal-container");
+  my_modal.innerHTML = "";
   const createDiv = document.createElement("div");
   createDiv.innerHTML = `
-  
-    <form method="dialog">
-      <button
-        class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3"
-      >
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-    </form>
-
     <!-- Title -->
     <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">
      ${details.word} <span class="text-gray-500 text-base sm:text-lg">${details.pronunciation}</span>
@@ -151,14 +143,7 @@ const showWordDetails = (details) => {
           class="badge badge-outline px-3 py-2 text-sm sm:text-base"
           >${details.synonyms}</span
         >
-        <span
-          class="badge badge-outline px-3 py-2 text-sm sm:text-base"
-          >Excited</span
-        >
-        <span
-          class="badge badge-outline px-3 py-2 text-sm sm:text-base"
-          >Keen</span
-        >
+       
       </div>
     </div>
 
