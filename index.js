@@ -25,7 +25,6 @@ ${lesson.level_no}
                             </button>
     `;
     levelVocabulary.append(createDiv);
-    console.log(lesson.level_no);
   });
 };
 
@@ -40,6 +39,28 @@ const UiShowingWord = (words) => {
   //get Level-word-container div
   const levelWordDiv = document.getElementById("Level-word-container");
   levelWordDiv.innerHTML = "";
+  if (words.length === 0) {
+    levelWordDiv.innerHTML = `
+             <div
+                class="flex flex-col items-center justify-center col-span-full  bg-gray-200 rounded-lg text-center p-6 mx-auto ">
+
+                <div class="mb-4">
+                    <img src="./assets/alert-error.png" alt="">
+                </div>
+
+                <!-- Small Text -->
+                <p class="text-gray-500 text-sm mb-2 bangla-font">
+                    এই Lesson এ এখনো কোনো Vocabulary যুক্ত করা হয়নি।
+                </p>
+
+                <!-- Bold Text -->
+                <h2 class="text-2xl font-bold text-gray-700 bangla-font">
+                    নেক্সট Lesson এ যান
+                </h2>
+            </div>
+  `;
+    return;
+  }
   words.map((word) => {
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
