@@ -67,7 +67,9 @@ const UiShowingWord = (words) => {
 <div class="card bg-white shadow-md rounded-xl p-6 text-center">
 <h2 class="font-bold text-xl">${word.word}</h2>
 <p class="text-gray-500 text-sm mt-1">Meaning / Pronunciation</p>
-<p class="mt-3 text-lg font-medium bangla-font">${word.pronunciation}/${word.meaning}</p>
+<p class="mt-3 text-lg font-medium bangla-font">${
+      word.meaning ? word.meaning : "অর্থ পাওয়া যায়নি"
+    }/${word.pronunciation}</p>
 <div class="flex justify-between mt-6">
 <!-- Info Button -->
 <button class="btn btn-sm bg-blue-100 text-blue-600 border-none">
