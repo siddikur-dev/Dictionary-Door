@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Door </title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <!-- Lucide Icon CDN -->
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Production version -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Daisy & Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- hero section -->
+    <div class="container mx-auto">
+        <div class="flex flex-col-reverse lg:flex-row my-9 items-center justify-between mx-8">
+            <!-- left side -->
+            <div class=" py-10 lg:py-0 text-center lg:text-left max-w-lg">
+                <h1 class="text-2xl md:text-4xl font-bold"> <span class="text-blue-600">English</span> is Easy!!
+                </h1>
+                <p class="py-4 text-sm md:text-base bangla-font"> আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি
+                    যদি
+                    নতুন হন অথবা
+                    আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ। </p>
+
+                <div class="space-y-4">
+                    <input id="login-name" class="input outline-none w-40" type="text" name="" id=""
+                        placeholder="Enter Your Name" value="siddikur-dev"><br>
+                    <input class="input outline-none w-42" type="password" name="" id=""
+                        placeholder="Enter Your Password" value="siddikur-dev"><br>
+                    <input id="getStartedBtn" type="submit" class="btn btn-primary" value="Get Started">
+                </div>
+            </div>
+            <!-- right side -->
+            <div>
+                <img class="w-80" src="./assets/profile-pic.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#F1F8FF] border-t border-gray-200">
+        <div
+            class="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center py-10 md:py-14 px-4 md:px-8 gap-6">
+            <!-- Left side -->
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="text-xl md:text-2xl font-bold">English</span>
+                    <img src="./assets/logo.png" alt="Logo" class="h-6 md:h-7" />
+                    <span class="tiro-bangla-font text-xl md:text-2xl">Door</span>
+                </div>
+                <p class="hind-siliguri-font text-base md:text-lg font-semibold mb-1">
+                    ইংরেজি শিখুন সহজে
+                </p>
+                <p class="text-gray-600 text-sm md:text-base">
+                    Providing ED-Tech Applications since 2025
+                </p>
+            </div>
+
+            <!-- Right side -->
+            <div class="flex flex-col md:items-end">
+                <p class="text-sm font-semibold text-gray-500">FOLLOW US</p>
+                <div class="flex gap-4 pt-2">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/siddikur2k22" target="_blank"
+                        class="text-gray-700 hover:text-blue-600">
+                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="https://youtube.com" target="_blank" class="text-gray-700 hover:text-red-600">
+                        <i data-lucide="youtube" class="w-6 h-6"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://instagram.com" target="_blank" class="text-gray-700 hover:text-pink-600">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/siddikur-dev" target="_blank" class="text-gray-700 hover:text-black">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Login js -->
+    <script src="./Login.js"></script>
+
+</body>
+
+</html>
