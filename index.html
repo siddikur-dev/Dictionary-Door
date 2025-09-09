@@ -175,7 +175,11 @@
                 Learn Vocabulary
             </h2>
             <div id="vocabulary-container" class="flex justify-center  gap-4 flex-wrap "></div>
+            <!-- spinner -->
+            <div class="flex  items-center justify-center my-4">
+                <span id="spinner" class=" hidden loading loading-bars loading-xl"></span>
 
+            </div>
             <!-- Load Level Word -->
             <div id="up-lwc" class="bg-gray-200 my-5">
                 <div id="Level-word-container"
@@ -201,18 +205,110 @@
                 </div>
 
             </div>
-            <!-- Modal-->
-            <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+            <!-- Modal -->
+            <dialog id="my_modal" class="modal">
                 <div
-                    class="modal-box w-6/12 lg:h-96 max-w-full sm:w-4/12 sm:max-w-2xl rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg mx-auto">
-                    <div id="modal-container">
+                    class="modal-box w-full max-w-md sm:max-w-lg lg:max-w-2xl rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg mx-auto">
+                    <div id="modal-container"></div>
 
-                    </div>
+                    <!-- Close button (optional) -->
+                    <form method="dialog" class="mt-4 text-right">
+                        <button class="btn btn-sm btn-ghost">Close</button>
+                    </form>
                 </div>
             </dialog>
 
+        </section>
+        <!-- FAQ Section -->
+        <section class="py-8">
+            <div class="container mx-auto faq-wrapper px-4">
 
+                <!-- Header -->
+                <header class="text-center mb-6">
+                    <h1 class="text-2xl sm:text-3xl font-bold">
+                        <span class="text-sky-500">Frequently</span>
+                        <span class="text-gray-900"> Asked Questions</span>
+                    </h1>
+                </header>
+
+                <!-- FAQ list -->
+                <div class="space-y-3">
+
+                    <!-- Item 1 -->
+                    <div class="collapse collapse-plus bg-base-100 rounded-lg shadow-sm">
+                        <input type="radio" name="faq-accordion" checked />
+                        <div class="collapse-title text-sm font-medium py-3">
+                            1. How can I start learning English on this website?
+                        </div>
+                        <div class="collapse-content text-gray-600 text-sm leading-relaxed">
+                            <p>
+                                You can start by exploring our beginner lessons, interactive exercises, and quizzes.
+                                We also offer structured courses to guide you step by step.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="collapse collapse-plus bg-base-100 rounded-lg shadow-sm">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-sm font-medium py-3">
+                            2. Is this website free to use?
+                        </div>
+                        <div class="collapse-content text-gray-600 text-sm leading-relaxed">
+                            <p>
+                                Yes — many of our basic lessons and resources are free.
+                                We also offer optional premium courses for advanced study.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="collapse collapse-plus bg-base-100 rounded-lg shadow-sm">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-sm font-medium py-3">
+                            3. Do I need to create an account?
+                        </div>
+                        <div class="collapse-content text-gray-600 text-sm leading-relaxed">
+                            <p>
+                                Creating an account saves your progress and unlocks certain features,
+                                but you can explore content without signing up.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="collapse collapse-plus bg-base-100 rounded-lg shadow-sm">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-sm font-medium py-3">
+                            4. How can I build my English vocabulary?
+                        </div>
+                        <div class="collapse-content text-gray-600 text-sm leading-relaxed">
+                            <p>
+                                Use flashcards, read graded stories, practice with quizzes,
+                                and try using new words in sentences every day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="collapse collapse-plus bg-base-100 rounded-lg shadow-sm">
+                        <input type="radio" name="faq-accordion" />
+                        <div class="collapse-title text-sm font-medium py-3">
+                            5. Do you offer certificates for completed courses?
+                        </div>
+                        <div class="collapse-content text-gray-600 text-sm leading-relaxed">
+                            <p>
+                                Yes — certificates are available for some paid courses
+                                after you pass the final assessments.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
+   
 
     <script>
         lucide.createIcons();
